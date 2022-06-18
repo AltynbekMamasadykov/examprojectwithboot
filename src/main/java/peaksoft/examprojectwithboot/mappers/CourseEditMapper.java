@@ -6,6 +6,7 @@ import peaksoft.examprojectwithboot.entities.Course;
 
 @Component
 public class CourseEditMapper {
+
     public Course createCourse(CourseRequest courseRequest){
         if (courseRequest == null){
             return null;
