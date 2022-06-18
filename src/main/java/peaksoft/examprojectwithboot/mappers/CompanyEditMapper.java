@@ -16,4 +16,9 @@ public class CompanyEditMapper {
         company.setLocatedCountry(companyRequest.getLocatedCountry());
         return company;
     }
+
+    public void update(Company company, CompanyRequest companyRequest){
+        company.setCompanyName(companyRequest.getCompanyName());
+        company.setLocatedCountry(companyRequest.getLocatedCountry());
+    }
 }

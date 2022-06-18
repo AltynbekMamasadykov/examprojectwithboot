@@ -16,4 +16,9 @@ public class CourseEditMapper {
         course.setDuration(courseRequest.getDuration());
         return course;
     }
+
+    public void update(CourseRequest courseRequest, Course course) {
+        course.setCourseName(courseRequest.getCourseName());
+        course.setDuration(courseRequest.getDuration());
+    }
 }

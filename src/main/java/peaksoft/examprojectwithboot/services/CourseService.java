@@ -29,4 +29,15 @@ public class CourseService {
         return courseViewMapper.viewAll(courseRepository.findAll());
     }
 
+    public CourseResponse findById(Long id) {
+        Course course = courseRepository.findById(id).get();
+        return courseViewMapper.viewCourse(course);
+    }
+
+    public CourseResponse update(CourseRequest courseRequest, Long id) {
+        Course course = courseRepository.findById(id).get();
+        courseEditMapper.update(courseRequest,course);
+        return courseViewMapper.viewCourse(courseRepository.save(course));
+
+    }
 }

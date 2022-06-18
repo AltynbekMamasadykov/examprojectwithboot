@@ -28,5 +28,13 @@ public class CourseApi {
         return courseService.getAllCourses();
     }
 
+    @GetMapping("{id}")
+    public CourseResponse findById(@PathVariable Long id){
+        return  courseService.findById(id);
+    }
 
+    @PutMapping("{id}")
+    public CourseResponse update(@PathVariable Long id, @RequestBody CourseRequest courseRequest){
+        return courseService.update(courseRequest,id);
+    }
 }
