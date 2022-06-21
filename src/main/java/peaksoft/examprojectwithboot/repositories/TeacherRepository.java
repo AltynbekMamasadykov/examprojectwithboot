@@ -1,4 +1,7 @@
 package peaksoft.examprojectwithboot.repositories;
 
-public class TeacherRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import peaksoft.examprojectwithboot.entities.Teacher;
+
+public interface TeacherRepository extends JpaRepository<Teacher,Long> {
 }

@@ -1,6 +1,8 @@
 package peaksoft.examprojectwithboot.mappers;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import peaksoft.examprojectwithboot.dto.requests.CourseRequest;
 import peaksoft.examprojectwithboot.dto.responses.CourseResponse;
 import peaksoft.examprojectwithboot.entities.Course;
 
@@ -8,15 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class CourseViewMapper {
-
+@RequiredArgsConstructor
+public class CourseMapper {
     public CourseResponse viewCourse(Course course){
         CourseResponse courseResponse = new CourseResponse();
         courseResponse.setId(course.getId());
         courseResponse.setCourseName(course.getCourseName());
         courseResponse.setDuration(course.getDuration());
         courseResponse.setCompany(course.getCompany());
-        System.out.println("bir");
         return courseResponse;
     }
 
@@ -26,5 +27,23 @@ public class CourseViewMapper {
             courseResponses.add(viewCourse(course));
         }
         return courseResponses;
+    }
+
+
+    public Course createCourse(CourseRequest courseRequest){
+        if (courseRequest == null){
+            return null;
+        }
+        Course course = new Course();
+        course.setCourseName(courseRequest.getCourseName());
+        course.setDuration(courseRequest.getDuration());
+        course.setCompany(courseRequest.getCompany());
+        return course;
+    }
+
+    public void update(CourseRequest courseRequest, Course course) {
+        course.setCourseName(courseRequest.getCourseName());
+        course.setDuration(courseRequest.getDuration());
+        course.setCompany(courseRequest.getCompany());
     }
 }

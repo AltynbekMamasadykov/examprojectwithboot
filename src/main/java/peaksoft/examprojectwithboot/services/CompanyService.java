@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 import peaksoft.examprojectwithboot.dto.requests.CompanyRequest;
 import peaksoft.examprojectwithboot.dto.responses.CompanyResponse;
 import peaksoft.examprojectwithboot.entities.Company;
-import peaksoft.examprojectwithboot.mappers.CompanyEditMapper;
-import peaksoft.examprojectwithboot.mappers.CompanyViewMapper;
+import peaksoft.examprojectwithboot.mappers.CompanyMapper;
 import peaksoft.examprojectwithboot.repositories.CompanyRepository;
 
 import java.util.List;
@@ -17,34 +16,34 @@ import java.util.List;
 public class CompanyService {
 
     private final CompanyRepository companyRepository;
-    private final CompanyEditMapper companyEditMapper;
-    private final CompanyViewMapper companyViewMapper;
+    private final CompanyMapper companyMapper;
+
 
     public CompanyResponse create(CompanyRequest companyRequest){
-        Company company = companyEditMapper.create(companyRequest);
+        Company company = companyMapper.create(companyRequest);
         companyRepository.save(company);
-        return companyViewMapper.viewCompany(company);
+        return companyMapper.viewCompany(company);
     }
 
     public List<CompanyResponse> getAllCompanies(){
-        return companyViewMapper.viewAllCompanies(companyRepository.findAll());
+        return companyMapper.viewAllCompanies(companyRepository.findAll());
     }
 
     public CompanyResponse update(CompanyRequest companyRequest, Long id){
         Company company = companyRepository.findById(id).get();
-        companyEditMapper.update(company,companyRequest);
-        return companyViewMapper.viewCompany(companyRepository.save(company));
+        companyMapper.update(company,companyRequest);
+        return companyMapper.viewCompany(companyRepository.save(company));
     }
 
     public CompanyResponse findById(Long id){
         Company company = companyRepository.findById(id).get();
-        return companyViewMapper.viewCompany(company);
+        return companyMapper.viewCompany(company);
     }
 
 
     public CompanyResponse deleteById(Long id) {
         Company company = companyRepository.findById(id).get();
         companyRepository.delete(company);
-        return companyViewMapper.viewCompany(company);
+        return companyMapper.viewCompany(company);
     }
 }
