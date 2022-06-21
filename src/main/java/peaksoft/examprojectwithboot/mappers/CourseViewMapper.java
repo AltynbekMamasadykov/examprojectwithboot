@@ -15,6 +15,8 @@ public class CourseViewMapper {
         courseResponse.setId(course.getId());
         courseResponse.setCourseName(course.getCourseName());
         courseResponse.setDuration(course.getDuration());
+        courseResponse.setCompany(course.getCompany());
+        System.out.println("bir");
         return courseResponse;
     }
 

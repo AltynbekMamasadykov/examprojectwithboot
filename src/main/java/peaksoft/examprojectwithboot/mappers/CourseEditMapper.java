@@ -14,11 +14,13 @@ public class CourseEditMapper {
         Course course = new Course();
         course.setCourseName(courseRequest.getCourseName());
         course.setDuration(courseRequest.getDuration());
+        course.setCompany(courseRequest.getCompany());
         return course;
     }
 
     public void update(CourseRequest courseRequest, Course course) {
         course.setCourseName(courseRequest.getCourseName());
         course.setDuration(courseRequest.getDuration());
+        course.setCompany(courseRequest.getCompany());
     }
 }

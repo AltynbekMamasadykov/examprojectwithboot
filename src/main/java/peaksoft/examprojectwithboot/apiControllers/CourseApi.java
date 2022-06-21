@@ -37,4 +37,9 @@ public class CourseApi {
     public CourseResponse update(@PathVariable Long id, @RequestBody CourseRequest courseRequest){
         return courseService.update(courseRequest,id);
     }
+
+    @DeleteMapping("{id}")
+    public CourseResponse delete(@PathVariable Long id){
+        return courseService.delete(id);
+    }
 }

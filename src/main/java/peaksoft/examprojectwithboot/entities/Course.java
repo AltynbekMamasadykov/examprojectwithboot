@@ -1,5 +1,6 @@
 package peaksoft.examprojectwithboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,5 +17,10 @@ public class Course {
     private Long id;
     private String courseName;
     private String duration;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
 }

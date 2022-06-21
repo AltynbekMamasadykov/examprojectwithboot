@@ -12,8 +12,10 @@ public class CompanyViewMapper {
 
     public CompanyResponse viewCompany(Company company){
         CompanyResponse companyResponse = new CompanyResponse();
+        companyResponse.setId(company.getId());
         companyResponse.setCompanyName(company.getCompanyName());
         companyResponse.setLocatedCountry(company.getLocatedCountry());
+        companyResponse.setCourse(company.getCourse());
         return companyResponse;
     }
 

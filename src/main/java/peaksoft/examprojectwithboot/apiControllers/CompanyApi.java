@@ -16,7 +16,7 @@ public class CompanyApi {
     private final CompanyService companyService;
 
     @PostMapping
-    public CompanyResponse create(CompanyRequest companyRequest){
+    public CompanyResponse create(@RequestBody CompanyRequest companyRequest){
         return companyService.create(companyRequest);
     }
 
@@ -34,6 +34,12 @@ public class CompanyApi {
     public CompanyResponse update(@PathVariable Long id,@RequestBody CompanyRequest companyRequest){
         return companyService.update(companyRequest,id);
     }
+
+    @DeleteMapping("{id}")
+    public CompanyResponse delete(@PathVariable Long id){
+        return companyService.deleteById(id);
+    }
+
 
 
 }

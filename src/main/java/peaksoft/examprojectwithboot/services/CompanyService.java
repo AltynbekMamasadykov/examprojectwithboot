@@ -10,7 +10,6 @@ import peaksoft.examprojectwithboot.mappers.CompanyEditMapper;
 import peaksoft.examprojectwithboot.mappers.CompanyViewMapper;
 import peaksoft.examprojectwithboot.repositories.CompanyRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,6 +42,9 @@ public class CompanyService {
     }
 
 
-
-
+    public CompanyResponse deleteById(Long id) {
+        Company company = companyRepository.findById(id).get();
+        companyRepository.delete(company);
+        return companyViewMapper.viewCompany(company);
+    }
 }

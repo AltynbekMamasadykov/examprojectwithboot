@@ -40,4 +40,10 @@ public class CourseService {
         return courseViewMapper.viewCourse(courseRepository.save(course));
 
     }
+
+    public CourseResponse delete(Long id) {
+        Course course = courseRepository.findById(id).get();
+        courseRepository.delete(course);
+        return courseViewMapper.viewCourse(course);
+    }
 }
