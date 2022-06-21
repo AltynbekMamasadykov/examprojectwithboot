@@ -1,11 +1,16 @@
 package peaksoft.examprojectwithboot.entities;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "groups")
+@NoArgsConstructor @AllArgsConstructor
 @Getter @Setter
 
 public class Group {
@@ -16,7 +21,9 @@ public class Group {
 
     private String groupName;
 
+    @CreatedDate
     private LocalDate dateOfStart;
 
+    @CreatedDate
     private LocalDate dateOfFinish;
 }

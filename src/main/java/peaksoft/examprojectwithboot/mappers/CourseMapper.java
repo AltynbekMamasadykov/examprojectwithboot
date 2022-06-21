@@ -12,6 +12,7 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class CourseMapper {
+
     public CourseResponse viewCourse(Course course){
         CourseResponse courseResponse = new CourseResponse();
         courseResponse.setId(course.getId());
