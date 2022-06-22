@@ -20,7 +20,7 @@ public class Company {
     private String LocatedCountry;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "company",fetch = FetchType.LAZY)
     private List<Course> course;
 
 

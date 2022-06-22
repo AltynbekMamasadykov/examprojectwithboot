@@ -10,6 +10,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+
+
 @Entity
 @Table(name = "groups")
 @NoArgsConstructor @AllArgsConstructor
@@ -29,11 +31,11 @@ public class Group {
     @CreatedDate
     private LocalDate dateOfFinish;
 
-    @ManyToMany
     @JsonIgnore
+    @ManyToMany
     private List<Course> courses;
 
-    @OneToMany(mappedBy = "group")
     @JsonIgnore
+    @OneToMany(mappedBy = "group",fetch = FetchType.LAZY)
     private List<Student> students;
 }

@@ -19,8 +19,8 @@ public class Teacher {
 
     private String email;
 
-    @OneToOne
     @JsonIgnore
+    @OneToOne
     private Course course;
 
 }

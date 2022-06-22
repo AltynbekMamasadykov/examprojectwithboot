@@ -21,6 +21,7 @@ public class GroupRequest {
     @CreatedDate
     private LocalDate dateOfFinish;
 
+
     private List<Course> courses;
 
     private List<Student> students;

@@ -24,12 +24,12 @@ public class Course {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @ManyToMany(mappedBy = "courses")
     @JsonIgnore
+    @ManyToMany(mappedBy = "courses",cascade = CascadeType.ALL)
     private List<Group> groups;
 
-    @OneToOne(mappedBy = "course")
     @JsonIgnore
+    @OneToOne(mappedBy = "course",fetch = FetchType.LAZY)
     private Teacher teacher;
 
 }

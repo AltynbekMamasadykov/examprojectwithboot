@@ -22,8 +22,8 @@ public class Student {
 
     private StudyFormat studyFormat;
 
-    @ManyToOne
     @JsonIgnore
+    @ManyToOne
     private Group group;
 
 }
