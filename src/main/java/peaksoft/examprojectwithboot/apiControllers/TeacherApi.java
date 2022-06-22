@@ -26,17 +26,17 @@ public class TeacherApi {
         return teacherService.create(teacherRequest);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("find/{id}")
     public TeacherResponse findById(@PathVariable Long id){
         return teacherService.findById(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("update/{id}")
     public TeacherResponse update(@PathVariable Long id, @RequestBody TeacherRequest teacherRequest){
         return teacherService.update(id,teacherRequest);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public TeacherResponse delete(@PathVariable Long id){
         return teacherService.deleteById(id);
     }

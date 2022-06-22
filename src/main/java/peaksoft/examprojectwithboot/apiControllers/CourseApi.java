@@ -28,17 +28,17 @@ public class CourseApi {
         return courseService.getAllCourses();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("find/{id}")
     public CourseResponse findById(@PathVariable Long id){
         return  courseService.findById(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("update/{id}")
     public CourseResponse update(@PathVariable Long id, @RequestBody CourseRequest courseRequest){
         return courseService.update(courseRequest,id);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public CourseResponse delete(@PathVariable Long id){
         return courseService.delete(id);
     }

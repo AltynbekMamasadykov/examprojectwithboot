@@ -26,17 +26,17 @@ public class StudentApi {
         return studentService.getAllStudents();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("find/{id}")
     public StudentResponce findById(@PathVariable Long id){
         return studentService.findById(id);
     }
 
-   @PutMapping("{id}")
+   @PutMapping("update/{id}")
     public StudentResponce update(@PathVariable Long id,@RequestBody StudentRequest studentRequest){
         return studentService.update(id,studentRequest);
    }
 
-   @DeleteMapping("{id}")
+   @DeleteMapping("delete/{id}")
     public StudentResponce delete(@PathVariable Long id){
         return studentService.delete(id);
    }

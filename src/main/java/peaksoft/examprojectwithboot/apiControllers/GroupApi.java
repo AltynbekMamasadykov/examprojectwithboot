@@ -21,7 +21,7 @@ public class GroupApi {
         return groupService.create(groupRequest);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("find/{id}")
     public GroupResponse findById(@PathVariable Long id){
         return groupService.findById(id);
     }
@@ -31,12 +31,12 @@ public class GroupApi {
         return groupService.getAllGroups();
     }
 
-    @PutMapping("{id}")
+    @PutMapping("update/{id}")
     public GroupResponse update(@PathVariable Long id,@RequestBody GroupRequest groupRequest){
         return groupService.update(id,groupRequest);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public GroupResponse delete(@PathVariable Long id){
         return groupService.delete(id);
     }

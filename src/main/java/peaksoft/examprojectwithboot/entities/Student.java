@@ -1,4 +1,5 @@
 package peaksoft.examprojectwithboot.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import peaksoft.examprojectwithboot.enums.StudyFormat;
@@ -20,5 +21,9 @@ public class Student {
     private String email;
 
     private StudyFormat studyFormat;
+
+    @ManyToOne
+    @JsonIgnore
+    private Group group;
 
 }

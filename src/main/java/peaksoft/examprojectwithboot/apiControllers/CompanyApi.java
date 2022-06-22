@@ -25,17 +25,17 @@ public class CompanyApi {
         return companyService.getAllCompanies();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("find/{id}")
     public CompanyResponse findById(@PathVariable Long id){
         return companyService.findById(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("update/{id}")
     public CompanyResponse update(@PathVariable Long id,@RequestBody CompanyRequest companyRequest){
         return companyService.update(companyRequest,id);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public CompanyResponse delete(@PathVariable Long id){
         return companyService.deleteById(id);
     }

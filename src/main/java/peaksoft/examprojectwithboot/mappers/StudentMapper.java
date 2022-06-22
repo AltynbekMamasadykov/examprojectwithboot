@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import peaksoft.examprojectwithboot.dto.requests.StudentRequest;
 import peaksoft.examprojectwithboot.dto.responses.StudentResponce;
 import peaksoft.examprojectwithboot.entities.Student;
-import peaksoft.examprojectwithboot.repositories.StudentRepository;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ public class StudentMapper {
         studentResponce.setLastName(student.getLastName());
         studentResponce.setEmail(student.getEmail());
         studentResponce.setStudyFormat(student.getStudyFormat());
+        studentResponce.setGroup(student.getGroup());
         return studentResponce;
     }
 
@@ -31,6 +32,7 @@ public class StudentMapper {
         student.setLastName(studentRequest.getLastName());
         student.setEmail(studentRequest.getEmail());
         student.setStudyFormat(studentRequest.getStudyFormat());
+        student.setGroup(studentRequest.getGroup());
         return student;
     }
 
@@ -47,6 +49,7 @@ public class StudentMapper {
         student.setLastName(studentRequest.getLastName());
         student.setEmail(studentRequest.getEmail());
         student.setStudyFormat(studentRequest.getStudyFormat());
+        student.setGroup(studentRequest.getGroup());
     }
 
 

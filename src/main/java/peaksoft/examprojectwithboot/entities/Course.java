@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "courses")
@@ -22,5 +23,13 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
+
+    @ManyToMany(mappedBy = "courses")
+    @JsonIgnore
+    private List<Group> groups;
+
+    @OneToOne(mappedBy = "course")
+    @JsonIgnore
+    private Teacher teacher;
 
 }

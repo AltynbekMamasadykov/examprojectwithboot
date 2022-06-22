@@ -17,6 +17,7 @@ public class TeacherMapper {
         teacherResponse.setFirstName(teacher.getFirstName());
         teacherResponse.setLastName(teacher.getLastName());
         teacherResponse.setEmail(teacher.getEmail());
+        teacherResponse.setCourse(teacher.getCourse());
         return teacherResponse;
     }
 
@@ -33,6 +34,7 @@ public class TeacherMapper {
         teacher.setFirstName(teacherRequest.getFirstName());
         teacher.setLastName(teacherRequest.getLastName());
         teacher.setEmail(teacherRequest.getEmail());
+        teacher.setCourse(teacherRequest.getCourse());
         return teacher;
     }
 
@@ -40,6 +42,7 @@ public class TeacherMapper {
         teacher.setFirstName(teacherRequest.getFirstName());
         teacher.setLastName(teacherRequest.getLastName());
         teacher.setEmail(teacherRequest.getEmail());
+        teacher.setCourse(teacherRequest.getCourse());
     }
 
 }

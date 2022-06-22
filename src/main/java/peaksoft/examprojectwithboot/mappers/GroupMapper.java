@@ -19,6 +19,8 @@ public class GroupMapper {
         group.setGroupName(groupRequest.getGroupName());
         group.setDateOfStart(groupRequest.getDateOfStart());
         group.setDateOfFinish(groupRequest.getDateOfFinish());
+        group.setCourses(groupRequest.getCourses());
+        group.setStudents(groupRequest.getStudents());
         return group;
     }
 
@@ -28,6 +30,8 @@ public class GroupMapper {
         groupResponse.setGroupName(group.getGroupName());
         groupResponse.setDateOfStart(group.getDateOfStart());
         groupResponse.setDateOfFinish(group.getDateOfFinish());
+        groupResponse.setCourses(group.getCourses());
+        groupResponse.setStudents(group.getStudents());
         return groupResponse;
     }
 
@@ -43,5 +47,7 @@ public class GroupMapper {
         group.setGroupName(groupRequest.getGroupName());
         group.setDateOfStart(groupRequest.getDateOfStart());
         group.setDateOfFinish(groupRequest.getDateOfFinish());
+        group.setCourses(groupRequest.getCourses());
+        group.setStudents(groupRequest.getStudents());
     }
 }

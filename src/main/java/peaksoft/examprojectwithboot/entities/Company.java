@@ -20,8 +20,10 @@ public class Company {
     private String LocatedCountry;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "company")
+    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
     private List<Course> course;
+
+
 
 
 }

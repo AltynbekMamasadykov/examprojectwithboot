@@ -1,4 +1,5 @@
 package peaksoft.examprojectwithboot.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "groups")
@@ -26,4 +28,12 @@ public class Group {
 
     @CreatedDate
     private LocalDate dateOfFinish;
+
+    @ManyToMany
+    @JsonIgnore
+    private List<Course> courses;
+
+    @OneToMany(mappedBy = "group")
+    @JsonIgnore
+    private List<Student> students;
 }

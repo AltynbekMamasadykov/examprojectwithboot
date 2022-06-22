@@ -19,6 +19,8 @@ public class CourseMapper {
         courseResponse.setCourseName(course.getCourseName());
         courseResponse.setDuration(course.getDuration());
         courseResponse.setCompany(course.getCompany());
+        courseResponse.setGroups(course.getGroups());
+        courseResponse.setTeacher(course.getTeacher());
         return courseResponse;
     }
 
@@ -39,6 +41,8 @@ public class CourseMapper {
         course.setCourseName(courseRequest.getCourseName());
         course.setDuration(courseRequest.getDuration());
         course.setCompany(courseRequest.getCompany());
+        course.setGroups(courseRequest.getGroups());
+        course.setTeacher(courseRequest.getTeacher());
         return course;
     }
 
@@ -46,5 +50,7 @@ public class CourseMapper {
         course.setCourseName(courseRequest.getCourseName());
         course.setDuration(courseRequest.getDuration());
         course.setCompany(courseRequest.getCompany());
+        course.setGroups(courseRequest.getGroups());
+        course.setTeacher(courseRequest.getTeacher());
     }
 }
