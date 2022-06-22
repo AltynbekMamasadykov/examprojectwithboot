@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/test")
-@PreAuthorize("hasAuthority('ADMIN')")
+@PreAuthorize("hasAuthority('TEACHER')")
 public class TestApi {
 
     @GetMapping("/hello")
     public String helloAdmin(){
-        return "Hello I am Admin, ONLY ADMIN, not superAdmin";
+        return "Hello I am Teacher, not superAdmin";
     }
 
 }

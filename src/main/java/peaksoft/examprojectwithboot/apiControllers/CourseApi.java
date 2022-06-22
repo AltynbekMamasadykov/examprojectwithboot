@@ -1,6 +1,7 @@
 package peaksoft.examprojectwithboot.apiControllers;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import peaksoft.examprojectwithboot.dto.requests.CourseRequest;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@PreAuthorize("hasAuthority('SUPER_ADMIN')")
 @RequestMapping("api/courses")
 
 public class CourseApi {
